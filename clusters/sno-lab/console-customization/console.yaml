@@ -3,6 +3,7 @@ kind: Console
 metadata:
   name: cluster
 spec:
+  revisionHistoryLimit: 2
   customization:
     capabilities:
     - name: LightspeedButton
