@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/TU_USUARIO/TU_REPO.git'
+    repoURL: 'https://github.com/javi-mb/sandbox.git'
     targetRevision: HEAD
     path: clusters/sno-lab        # <--- Apunta a la carpeta del clúster
   destination:
