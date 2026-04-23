@@ -1,0 +1,55 @@
+apiVersion: operator.openshift.io/v1
+kind: Console
+metadata:
+  name: cluster
+spec:
+  customization:
+    capabilities:
+    - name: LightspeedButton
+      visibility:
+        state: Enabled
+    - name: GettingStartedBanner
+      visibility:
+        state: Enabled
+    developerCatalog:
+      types:
+        state: Enabled
+    logos:
+    - themes:
+      - mode: Dark
+        source:
+          configMap:
+            key: logo.svg
+            name: anubix-logo
+          from: ConfigMap
+      - mode: Light
+        source:
+          configMap:
+            key: logo.svg
+            name: anubix-logo
+          from: ConfigMap
+      type: Masthead
+    - themes:
+      - mode: Dark
+        source:
+          configMap:
+            key: favicon.svg
+            name: anubix-logo
+          from: ConfigMap
+      - mode: Light
+        source:
+          configMap:
+            key: favicon.svg
+            name: anubix-logo
+          from: ConfigMap
+      type: Favicon
+    perspectives:
+    - id: dev
+      visibility:
+        state: Disabled
+  logLevel: Normal
+  managementState: Managed
+  operatorLogLevel: Normal
+  plugins:
+  - networking-console-plugin
+  - monitoring-plugin
